@@ -1,0 +1,45 @@
+{% extends 'user/base.html' %}
+ {% load static %} 
+ {% block msg %}
+  {% if messages %}
+  {% for message in messages %}
+    <div {% if message.tags %} class="alert alert-{{message.tags}} alert-dismissible fade show " {% endif %}>
+      <strong>{{message}}</strong>
+      
+    </div>
+  {% endfor %}
+  {% endif %}
+
+</div>
+{% endblock msg %}
+ {% block side %}
+<div class="container h-100 d-flex justify-content-center">
+    <div class="jumbotron my-auto">
+      <h1 class="display-3">Your Api key</h1>
+    </div>
+ 
+    
+</div>
+{% endblock side %} 
+
+
+{% block content %}
+ 
+ 
+<div class="d-flex justify-content-center align-items-center" style="height:100px;">
+     
+     
+     
+      <div class="card">
+ 
+  <div class="card-body bg-dark">
+  {% for d in user %}
+    <h5 class="card-title">{{d.user}}: {{d.apikey}}</h5>
+    {% endfor %}
+   
+  </div>
+</div>
+</div> 
+
+
+{% endblock content %}
