@@ -51,8 +51,8 @@ def user_signup(request):
                 request, 'congratulatons your Account is created Now login with your creditentials')
 
             user = form.save()
-            group = Group.objects.get(name='Author')
-            user.groups.add(group)
+            #group = Group.objects.get(name='Author')
+            #user.groups.add(group)
 
     else:
         form = SignUpForm()
